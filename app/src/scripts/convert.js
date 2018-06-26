@@ -92,6 +92,8 @@ export const convertToMp4 = opts => {
     '-s', `${makeEven(opts.width)}x${makeEven(opts.height)}`,
     '-ss', opts.startTime,
     '-to', opts.endTime,
+    '-threads', '4',
+    '-vcodec', 'h264_videotoolbox',
     opts.outputPath
   ]);
 };
